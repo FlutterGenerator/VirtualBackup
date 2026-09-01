@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 36
+    namespace "com.virtualbackup"
+
+    defaultConfig {
+        applicationId "com.virtualbackup"
+        minSdkVersion 14
+        targetSdkVersion 36
+        versionCode 3
+        versionName "1.2"
+    }
+
+    flavorDimensions "arch"
+
+    productFlavors {
+        arch64 {
+            dimension "arch"
+            applicationId "com.virtualbackup64"
+        }
+        arch32 {
+            dimension "arch"
+            applicationId "com.virtualbackup32"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+}
