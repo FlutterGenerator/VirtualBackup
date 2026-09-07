@@ -47,6 +47,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
     Button restore = findViewById(R.id.restore);
     restore.setOnClickListener(this);
+
     if (Build.VERSION.SDK_INT >= 30) {
       if (!Environment.isExternalStorageManager()) {
         try {
@@ -88,7 +89,14 @@ public class MainActivity extends Activity implements OnClickListener {
         if (!dir.isDirectory()) continue;
         String pkg = dir.getName();
         try {
-          ApplicationInfo ai = pm.getApplicationInfo(pkg, 0);
+          ApplicationInfo ai;
+
+          if (Build.VERSION.SDK_INT >= 33) {
+            ai = pm.getApplicationInfo(pkg, PackageManager.ApplicationInfoFlags.of(0));
+          } else {
+            ai = pm.getApplicationInfo(pkg, 0);
+          }
+
           String label = ai.loadLabel(pm).toString();
           pkgs.add(pkg);
           apps.add(label + "\n" + pkg);
