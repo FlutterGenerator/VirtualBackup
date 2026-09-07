@@ -24,7 +24,7 @@ jobs:
       - name: Make Gradle executable
         run: chmod +x ./gradlew
 
-      - name: Build Debug APKs (arch32 + arch64)
+      - name: Build Debug APK
         run: ./gradlew assembleDebug
 
       - name: Create GitHub Release
@@ -34,5 +34,4 @@ jobs:
           generate_release_notes: true
           prerelease: false
           files: |
-            app/build/outputs/apk/arch32/debug/app-arch32-debug.apk
-            app/build/outputs/apk/arch64/debug/app-arch64-debug.apk
+            app/build/outputs/apk/debug/app-debug.apk
