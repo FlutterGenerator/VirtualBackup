@@ -14,19 +14,6 @@ android {
         versionName "1.2"
     }
 
-    flavorDimensions "arch"
-
-    productFlavors {
-        arch64 {
-            dimension "arch"
-            applicationId "com.virtualbackup64"
-        }
-        arch32 {
-            dimension "arch"
-            applicationId "com.virtualbackup32"
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled false
