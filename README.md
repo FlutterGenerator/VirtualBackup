@@ -1,5 +1,5 @@
 # Virtual Backup
-[![Virtual Backup 32 / 64 Build](https://github.com/FlutterGenerator/VirtualBackup/actions/workflows/build-apk.yml/badge.svg)](https://github.com/FlutterGenerator/VirtualBackup/actions/workflows/build-apk.yml)
+[![Virtual Backup Build](https://github.com/FlutterGenerator/VirtualBackup/actions/workflows/build-apk.yml/badge.svg)](https://github.com/FlutterGenerator/VirtualBackup/actions/workflows/build-apk.yml)
 
 [![License Info](https://img.shields.io/badge/License-GPL--3.0-blue.svg?style=flat-square)](https://github.com/FlutterGenerator/VirtualBackup/blob/master/LICENSE)
 
