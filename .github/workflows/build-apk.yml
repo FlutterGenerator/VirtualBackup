@@ -1,4 +1,4 @@
-name: Virtual Backup 32 / 64 Build
+name: Virtual Backup Build
 permissions:
   contents: write
 
@@ -25,7 +25,7 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Build APKs (arch32 + arch64)
+      - name: Build APK
         run: ./gradlew assembleDebug --warning-mode all
 
       - name: Upload Gradle Problem Report
@@ -35,16 +35,9 @@ jobs:
           path: build/reports/problems/
           if-no-files-found: warn
 
-      - name: Upload APK (arch32)
+      - name: Upload APK
         uses: actions/upload-artifact@v7
         with:
-          name: Virtual-Backup-32-apk-debug-${{ github.run_id }}
-          path: app/build/outputs/apk/arch32/debug/app-arch32-debug.apk
-          if-no-files-found: error
-
-      - name: Upload APK (arch64)
-        uses: actions/upload-artifact@v7
-        with:
-          name: Virtual-Backup-64-apk-debug-${{ github.run_id }}
-          path: app/build/outputs/apk/arch64/debug/app-arch64-debug.apk
+          name: Virtual-Backup-apk-debug-${{ github.run_id }}
+          path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
